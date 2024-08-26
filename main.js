@@ -1,54 +1,40 @@
-$(document).ready(function() {
+//Nesta parte ele irá criar uma função onde ao clicar no butão de (Nova imagem +) ele desse a parte do header
+$(document).ready(function(){
+    $('header button').click(function(){
+         $('form').slideDown();
+     })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-    // Quando o documento estiver pronto, executa o código abaixo.
 
-    // Função para exibir o formulário ao clicar no botão do header
-    $('header button').click(function() {
-        // Quando o botão dentro do header for clicado, a função `slideDown()` faz com que o formulário deslize para baixo, tornando-o visível.
-        $('form').slideDown();
-    });
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Função para ocultar o formulário ao clicar no botão "Cancelar"
+//Nesta parte ele irá criar uma função onde ao clicar no butão de (Cancelar) ele sobi a parte do header
     $('#Cancelar').click(function() {
-        // Quando o botão com o ID "Cancelar" for clicado, a função `slideUp()` faz com que o formulário deslize para cima, ocultando-o.
         $('form').slideUp();
-    });
+    })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Função para adicionar uma nova imagem à lista ao redor das outras imagens ao submeter o formulário
-    $('form').on('submit', function(e) {
-        // Previne o comportamento padrão de submissão do formulário, que recarregaria a página
-        e.preventDefault();
 
-        // Captura o valor do campo de input com o ID "imagem-nova", que é o URL da nova imagem
-        const endereçoImagemNova = $('#imagem-nova').val();
 
-        // Cria um novo item de lista (<li>) que inicialmente está oculto (display: none)
-        const novoItem = $('<li style="display: none"></li>');
+//Nesta função, permite que ao adicionar uma nova imagem ele  adiciona esta nova imagem ao redor da outras imagens.
+$('form').on('submit', function(e){
+    e.preventDefault();
+    const endereçoImagemNova = $('#imagem-nova').val();
+    const novoIntem  = $('<li style="display: none"></li>');
+    $(`<img src="${endereçoImagemNova}"/>`).appendTo(novoIntem);
+    $(`
+        <div class="overley-imgamen-link ">
+         <a href="${endereçoImagemNova}" targer="_blank" title="Ver imagem em tamanho real">
+                Ver imagem em tamanho real
+         </a>
+        </div> `)
 
-        // Cria um novo elemento de imagem (<img>) com o src definido para o URL capturado e o adiciona ao novo item de lista
-        $(`<img src="${endereçoImagemNova}"/>`).appendTo(novoItem);
+    .appendTo(novoIntem);
+    $(novoIntem).appendTo('ul');
+    $(novoIntem).fadeIn(1000);
+    $('#imagem-nova').val('');
+})
 
-        // Cria um overlay com um link para ver a imagem em tamanho real e o adiciona ao novo item de lista
-        $(`
-            <div class="overley-imagem-link">
-                <a href="${endereçoImagemNova}" target="_blank" title="Ver imagem em tamanho real">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-        `).appendTo(novoItem);
-
-        // Adiciona o novo item de lista (que contém a nova imagem e o link) ao elemento <ul>
-        $(novoItem).appendTo('ul');
-
-        // Faz o novo item de lista aparecer gradualmente (fade in) em 1 segundo (1000 milissegundos)
-        $(novoItem).fadeIn(1000);
-
-        // Limpa o campo de input após a submissão para que o usuário possa adicionar uma nova imagem
-        $('#imagem-nova').val('');
-    });
-
-});
+})
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
