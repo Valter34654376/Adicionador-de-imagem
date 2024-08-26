@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura o viewport para o design responsivo -->
+    <title>JQuery</title> <!-- Título da página que aparece na aba do navegador -->
+    
+    <!-- Preconexões para otimizar o carregamento das fontes do Google -->
+    <link rel="preconnect" href="http://fonts.googleapis.com"> 
+    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importa a fonte 'Roboto' do Google Fonts, com pesos 400 e 700 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo CSS principal -->
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Galeria de Fotos</h1> <!-- Título da página -->
+        <button type="button">Nova imagem +</button> <!-- Botão para adicionar uma nova imagem -->
+    </header>
+
+    <!-- Formulário para inserção de nova imagem -->
+    <form>
+        <h2>Inserir nova imagem</h2> <!-- Subtítulo do formulário -->
+        <input id="imagem-nova" type="url" required placeholder="URL da imagem"> <!-- Campo para inserir a URL da nova imagem, obrigatório -->
+        <button type="submit">Adicionar</button> <!-- Botão para submeter o formulário e adicionar a imagem -->
+        <button id="Cancelar" type="reset">Cancelar</button> <!-- Botão para resetar o formulário e cancelar a adição da imagem -->
+    </form>
+
+    <!-- Lista de imagens já existentes -->
+    <ul>
+        <li>
+            <img src="./Imagens/foto1.jpg" alt="Pintura de um gato"> <!-- Imagem 1 com um texto alternativo descritivo -->
+            <div class="overley-imgamen-link">
+                <!-- Link para ver a imagem em tamanho real -->
+                <a href="/Imagens/foto1.jpg" title="Ver imagem em tamanho real" target="_blank"> <!-- Abre o link em uma nova aba -->
+                    Ver imagem em tamanho real
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="./Imagens/foto2.jpg" alt="Pintura de um gato"> <!-- Imagem 2 com um texto alternativo descritivo -->
+            <div class="overley-imgamen-link">
+                <!-- Link para ver a imagem em tamanho real -->
+                <a href="/Imagens/foto2.jpg" title="Ver imagem em tamanho real" target="_blank"> <!-- Abre o link em uma nova aba -->
+                    Ver imagem em tamanho real
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="./Imagens/foto3.jpg" alt="Pintura de um gato"> <!-- Imagem 3 com um texto alternativo descritivo -->
+            <div class="overley-imgamen-link">
+                <!-- Link para ver a imagem em tamanho real -->
+                <a href="/Imagens/foto3.jpg" title="Ver imagem em tamanho real" target="_blank"> <!-- Abre o link em uma nova aba -->
+                    Ver imagem em tamanho real
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Inclusão do jQuery a partir de um CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- Inclusão do arquivo JavaScript principal -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

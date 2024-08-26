@@ -1,0 +1,97 @@
+/* Reset básico de margens, preenchimentos e box-sizing para todos os elementos */
+* {
+    margin: 0; /* Remove todas as margens padrão dos elementos */
+    padding: 0; /* Remove todos os preenchimentos padrão dos elementos */
+    box-sizing: border-box; /* Inclui bordas e preenchimento nas dimensões dos elementos */
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão como 'Roboto', com fallback para sans-serif */
+}
+
+/* Estilização do header */
+header {
+    justify-content: center; /* Centraliza o conteúdo do header horizontalmente */
+    background-color: blueviolet; /* Define a cor de fundo do header como azul-violeta */
+    padding: 2em; /* Adiciona 2em de espaço interno ao redor do conteúdo do header */
+    display: flex; /* Usa o modelo de layout flexível para o header */
+    border-bottom: 0.2em solid #000; /* Adiciona uma borda inferior preta de 0.2em */
+    text-transform: uppercase; /* Transforma o texto do header para letras maiúsculas */
+}
+
+/* Estilização do botão dentro do header */
+header button {
+    margin-left: 1em; /* Adiciona um espaço de 1em à esquerda do botão */
+}
+
+/* Estilização do formulário */
+form {
+    justify-content: center; /* Centraliza o conteúdo do formulário horizontalmente */
+    background-color: rgb(224, 230, 230); /* Define a cor de fundo do formulário como um cinza claro */
+    padding: 2em; /* Adiciona 2em de espaço interno ao redor do conteúdo do formulário */
+    text-align: center; /* Centraliza o texto dentro do formulário */
+    text-transform: uppercase; /* Transforma o texto dentro do formulário para letras maiúsculas */
+    display: none; /* Esconde o formulário por padrão; ele será exibido quando necessário */
+}
+
+/* Estilização geral dos botões */
+button {
+    background-color: rgb(86, 161, 11); /* Define a cor de fundo do botão como verde */
+    border: none; /* Remove qualquer borda padrão do botão */
+    border-radius: 0.2em; /* Adiciona bordas arredondadas ao botão */
+    padding: 0.3em; /* Adiciona um pequeno espaçamento interno ao botão */
+    font-size: initial; /* Mantém o tamanho da fonte como o tamanho padrão */
+    font-weight: bold; /* Define o texto do botão como negrito */
+    color: aliceblue; /* Define a cor do texto do botão como branco */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre o botão */
+}
+
+/* Estilização dos campos de input */
+input {
+    padding: 0.3em; /* Adiciona um pequeno espaçamento interno ao campo de input */
+}
+
+/* Estilização específica do botão de cancelar */
+#Cancelar {
+    background-color: crimson; /* Define a cor de fundo do botão "Cancelar" como vermelho-crimson */
+}
+
+/* Estilização da lista não ordenada (ul) que contém as imagens */
+ul {
+    display: flex; /* Exibe os itens da lista (li) como uma linha flexível */
+    flex-wrap: wrap; /* Permite que os itens da lista se movam para a próxima linha, se necessário */
+}
+
+/* Estilização dos itens da lista (li) */
+ul li {
+    max-width: 25%; /* Define a largura máxima de cada item da lista como 25% do contêiner pai */
+    list-style: none; /* Remove as marcações de estilo padrão da lista (como bullets) */
+    position: relative; /* Define a posição como relativa para permitir o posicionamento absoluto de elementos filhos */
+    max-height: 14em; /* Define a altura máxima de cada item da lista */
+    overflow-y: hidden; /* Oculta o conteúdo que exceder a altura máxima do item */
+}
+
+/* Estilização das imagens dentro dos itens da lista */
+ul li img {
+    width: 100%; /* Faz com que as imagens ocupem 100% da largura do item da lista */
+}
+
+/* Estilização do overlay que aparece sobre as imagens */
+.overley-imgamen-link {
+    padding: 0.1em; /* Adiciona um pequeno espaçamento interno ao overlay */
+    background-color: rgba(0, 0, 0, 0.7); /* Define a cor de fundo do overlay como preto semi-transparente */
+    position: absolute; /* Posiciona o overlay de forma absoluta dentro do item da lista */
+    bottom: 0; /* Posiciona o overlay na parte inferior do item da lista */
+    left: 0; /* Alinha o overlay à esquerda do item da lista */
+    width: 100%; /* Faz com que o overlay ocupe 100% da largura do item da lista */
+    opacity: 0; /* Inicialmente esconde o overlay, deixando-o totalmente transparente */
+    transition: all ease 4s; /* Adiciona uma transição suave para a opacidade ao longo de 4 segundos */
+}
+
+/* Estilização dos links dentro do overlay */
+.overley-imgamen-link a {
+    color: aliceblue; /* Define a cor do texto do link como branco */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Torna o overlay visível quando o mouse passa sobre o item da lista */
+ul li:hover .overley-imgamen-link {
+    opacity: 1; /* Torna o overlay visível ao aumentar a opacidade para 1 */
+}
